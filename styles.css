@@ -5,14 +5,13 @@
     height: 100%;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    overflow: hidden;
 }
 
 :root {
     --xlarge-text: clamp(1.5rem,12vmin,8rem);
     --large-text: clamp(1rem,8vmin,6rem);
     --med-text: clamp(0.8rem,6vmin,4rem);
-    --small-text: clamp(0.6rem,4vmin,2rem);
+    --small-text: clamp(0.6rem,3vmin,1.5rem);
     --light-shadow: 1px 1px 3px 1px black;
     --med-shadow: 2px 2px 3px 2px black;
     --card-shadow: 1px 1px 3px 1px black;
@@ -41,8 +40,11 @@ body {
     align-items: center;
     padding-bottom: 0.5vh;
     border-bottom: 2px solid black;
+    position: fixed;
 }
-
+.inner-btn-container {
+    position: fixed;
+}
 
 .game-button,.inner-button {
     width: 25%;
@@ -62,13 +64,14 @@ body {
     margin: 0 auto;
     padding-top: 0.5vh;
     height: 90vh;
-    width: 100%;
+    width: 98%;
+}
+.topic-btn-inner {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    overflow: scroll;
+    margin-top: 8vh;
 }
-
 .topic-button {
     height: 8vh;
     min-height: 40px;
@@ -94,13 +97,12 @@ body {
 
 .select-btn-grid {
     margin: 0 auto;
-    margin-top: 1vh;
     width: 98%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     grid-template-rows: repeat(9,1fr);
     gap: 1vh;
-    padding: 5px;
+    margin-top: 8vh;
 }
 
 .select-img-box {

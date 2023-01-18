@@ -252,6 +252,7 @@ function back() {
 }
 
 function buildPracticeGrid() {
+    document.querySelector(".practice-grid").innerHTML = ""
     for ( let i = 0; i < displayArr.length; i++ ) {
         document.querySelector(".practice-grid").innerHTML += `
         <div class="practice-grid-box">
@@ -290,10 +291,6 @@ naviRight.addEventListener("click",()=>{
     }
 })
 
-
-
-activeArr = selectObj["animals"].slice(0,selectObj["animals"].length)
-renderGame()
 
 innerBtnAll.addEventListener("click",selectAll)
 innerBtnClear.addEventListener("click",selectClear)
