@@ -294,6 +294,55 @@ body {
     height: 6vmin;
     text-align: center;
 }
+
+.question-screen {
+    position: relative;
+}
+
+.question-list {
+    margin: 0 auto;
+    width: 95vw;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    z-index: 2;
+}
+
+.door {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.door-img {
+    height: auto;
+    max-height: 80vh;
+    max-width: 20vw;
+}
+
+.closed-view, .partial-view, .full-view {
+    margin: 0 auto;
+    width: 95vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.partial-view .door-img {
+    z-index: 10;
+}
+
+.partial-img-box {
+    position: absolute;
+    width: 20vw;
+    height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 span {
     text-align: center;
     height: fit-content;

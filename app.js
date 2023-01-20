@@ -23,6 +23,7 @@ const practiceScreen = document.querySelector(".practice-screen")
 const imageScreen = document.querySelector(".image-screen")
 const gameSelectScreen = document.querySelector(".game-select-screen")
 const gameScreen = document.querySelector(".game-screen")
+const questionList = document.querySelector(".question-list")
 const closedView = document.querySelector(".closed-view")
 const partialView = document.querySelector(".partial-view")
 const fullView = document.querySelector(".full-view")
@@ -101,8 +102,33 @@ const mainButtonGame = document.querySelector(".main-button-game")
 const naviLeft = document.querySelector(".navi-button-left")
 const naviRight = document.querySelector(".navi-button-right")
 
+const game1StartBtn = document.getElementById("game1")
+
+const redDoor = document.getElementById("red-door")
+
+
 mainButtonPractice.addEventListener("click",goToPractice)
 mainButtonGame.addEventListener("click",goToGameSelect)
+
+game1StartBtn.addEventListener("click",()=>{
+    inGameSelect = false
+    inGame = true
+    gameSelectScreen.classList.add("behind")
+    gameScreen.classList.remove("behind")
+})
+
+redDoor.addEventListener("click",()=>{
+    closedView.innerHTML = `<img class="door-img closed-door" src="./images/doors/img1.png">`
+    partialView.innerHTML = `<img class="door-img partial-door" src="./images/doors/img2.png">`
+    partialView.innerHTML += `<div class="partial-img-box"><img class="answer-img" src="${activeArr[0]}">`
+    closedView.classList.remove("behind")
+    questionList.classList.add("behind")
+    document.querySelector(".closed-door").addEventListener("click",()=>{
+        closedView.classList.add("behind")
+        partialView.classList.remove("behind")
+    })
+})
+
 
 function goToPractice() {
     if ( inMain ) {
