@@ -120,13 +120,19 @@ game1StartBtn.addEventListener("click",()=>{
 redDoor.addEventListener("click",()=>{
     closedView.innerHTML = `<img class="door-img closed-door" src="./images/doors/img1.png">`
     partialView.innerHTML = `<img class="door-img partial-door" src="./images/doors/img2.png">`
-    partialView.innerHTML += `<div class="partial-img-box"><img class="answer-img" src="${activeArr[0]}">`
+    partialView.innerHTML += `<div class="partial-img-box"><img class="partial-img" src="${activeArr[0]}">`
+    fullView.innerHTML += `<div class="full-img-box"><img class="partial-img" src="${activeArr[0]}">`
     closedView.classList.remove("behind")
     questionList.classList.add("behind")
     document.querySelector(".closed-door").addEventListener("click",()=>{
         closedView.classList.add("behind")
         partialView.classList.remove("behind")
+        document.querySelector(".partial-door").addEventListener("click",()=>{
+            partialView.classList.add("behind")
+            fullView.classList.remove("behind")
+        })
     })
+
 })
 
 
