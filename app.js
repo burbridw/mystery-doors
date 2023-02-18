@@ -111,11 +111,18 @@ mainButtonPractice.addEventListener("click",goToPractice)
 mainButtonGame.addEventListener("click",goToGameSelect)
 
 game1StartBtn.addEventListener("click",()=>{
+    clearGameScreen()
     inGameSelect = false
     inGame = true
     gameSelectScreen.classList.add("behind")
     gameScreen.classList.remove("behind")
 })
+
+function clearGameScreen() {
+    closedView.classList.remove("behind")
+    partialView.classList.add("behind")
+    fullView.classList.add("behind")
+}
 
 redDoor.addEventListener("click",()=>{
     closedView.innerHTML = `<img class="door-img closed-door" src="./images/doors/img1.png">`
@@ -132,7 +139,6 @@ redDoor.addEventListener("click",()=>{
             fullView.classList.remove("behind")
         })
     })
-
 })
 
 
